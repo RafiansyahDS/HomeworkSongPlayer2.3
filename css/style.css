@@ -1,0 +1,277 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #212121;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 20px;
+  flex: 1;
+}
+
+h1 {
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #535353;
+  transition: background-color 0.8s ease;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 10px 5px;
+}
+
+li:hover {
+  background-color: #8e8e8e;  
+}
+
+#song-list {
+  margin-bottom: 20px;
+}
+
+#song-player {
+  background-color: #121212;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#audio-player {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dropbtn {
+  background-color: #3e8e41;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;  
+  user-select: none;
+  height: 100%;
+}
+
+.dropdown {
+  position: relative;
+  float: right;
+}
+
+
+.dropdown-content {
+  user-select: none;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0; 
+  left: auto; 
+  white-space: nowrap; 
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  right: auto; 
+  left: 0; 
+  top: 100%; 
+  width:100%;
+  cursor: pointer;  
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #1db954;
+  transition: all 0.8s ease;
+  cursor: pointer;
+}
+
+#titlelogo{
+  float: left;
+  margin: 10px 10px;
+  color: white;
+  display: block;
+  cursor: pointer;
+}
+
+#titlelogo:hover{
+  cursor: pointer;
+}
+
+#heading{
+  background-color: #121212;
+  text-align: center;  
+}
+
+#addbutton{  
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 20px;
+  padding: 5px 10px;  
+  background-color: #3e8e41;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;  
+  color: white;
+  box-shadow: #224819 0 5px;
+  user-select: none;
+}
+
+#addbutton:active {
+  box-shadow: none;
+  top: 5px;
+  position: relative;
+}
+
+#addbutton:hover{
+  cursor: pointer;
+  background-color: #1db954;
+  transition: background-color 0.8s ease;
+}
+
+.dialog {
+  display: none;
+  position: fixed;
+  text-align: justify;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px 20px 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dialog h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.dialog label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.dialog input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.infourl {
+  display: none;
+  position: absolute;  
+  left: 100%;  
+  top: 60%;
+  width: 200px;
+  text-align: left;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 5px;
+  font-size: 14px;
+  color: #888;  
+  z-index: 999;
+}
+
+#url:focus + .infourl {
+  display: block;
+}
+
+#url:hover + .infourl {
+  display: block;
+}
+
+#addsong {
+  background-color: #1db954;
+  color: #ffffff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+  width: 100%;  
+}
+
+#addsong:hover {
+  background-color: #3e8e41;
+  cursor: pointer;
+}
+
+#canceladdsong{
+  background-color: #ff6060;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin-top: 10px;  
+  border: none;
+  border-radius: 3px;
+  font-size: 20px;
+  width: 100%;  
+}
+
+#canceladdsong:hover{
+  background-color: #c84545;
+  cursor: pointer;  
+}
+
+.song-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  user-select: none;
+}
+
+.song-title {
+  text-align: left;
+}
+
+.song-artists {
+  text-align: center;
+}
+
+.play-count {
+  text-align: right;
+}
+
+li.playing {
+  background-color: #40872e;
+  font-weight: bold;
+}
+
+.lbldetail{
+  color: white;
+  font-weight: bold;
+  padding: 10px 10px 0 10px;
+}
+
+
